@@ -1,5 +1,6 @@
 ﻿body{
 	background-color: rgb(242, 242, 242);
+	margin: 0;
 }
 
 div.Header{
@@ -8,6 +9,7 @@ div.Header{
 	height: 100px;
 	justify-content: center;
 	align-items: center;
+	border-radius: 0 0 20px 20px;
 }
 h1#Name{
 	text-align: center;	
@@ -15,6 +17,33 @@ h1#Name{
 	padding: 10px;
 }
 
+div.Content{
+	margin: 10px;
+}
+
+div.Content1 {
+	display: flex;
+	border: 2px solid #0066cc;
+}
+div.Picture{
+	width: 200px;
+	height: 242px;
+	border-right: 1px dotted black;
+	border-radius: 0 0 20px 0;
+}
+
+div.Picture img{
+	border-radius: 20px 0 20px 0;
+}
+
+div.Intro{
+	flex: 1;
+	padding: 10px;
+}
+
+div.Table1 {
+	margin: 25px;
+}
 table,th,tr,td  {
 	border: 2px solid #0066cc;
 	border-collapse: collapse;
@@ -22,14 +51,24 @@ table,th,tr,td  {
 	background-color: #cce6ff;
 }
 
+div.Content4 {}
+
+h3{
+	color: #0080ff;
+}
+
 .heading {
 	color: #0066cc;
-	text-shadow: 3px 2px #b3d9ff;
+	text-shadow: 3px 2px #d3d3d3;
 }
 
 div.Footer {
 	background-color: #66b3ff;
 	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 20px 20px 0 0;
 }
 .Footer h2 {
 	color: white;
@@ -58,3 +97,4 @@ a:active{
 	color: red;
 	text-decoration: none;
 }
+
