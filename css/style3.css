@@ -38,7 +38,7 @@ label#Password{
 	background-color:azure;
 	padding: 20px;
 	border-radius: 20px;
-	height: 300px;
+	height: auto;
 }
 
 .frmTxt{
@@ -78,17 +78,7 @@ label#Password{
 	outline: none;
 }
 
-#Register {
-	margin-top: 20px;
-}
-
-a#Register:link {
-	text-decoration: none;
-	font-weight: bolder;
-	color: blue;
-}
-a#Register:visited{
-	text-decoration: none;
-	font-weight: bolder;
-	color: blue;
+#checkbox{
+	display: flex;
+	flex-direction: column;
 }

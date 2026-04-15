@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<title>Thiết kế trang đăng ký tài khoản</title>		
+		<meta charset = "utf-8">
+        <link href="../css/style3.css" rel="StyleSheet">
+	</head>
+	
+	<body>
+		<div class="container">
+            <form class="frmLogin">
+                <h3>Đăng Ký Thông Tin</h3>
+                <div class="frmTxt">
+                    <label for = "txtName">Họ và tên:</label>
+                    <input type="text" class="control" id="txtName" name="txtName" placeholder="Nhập tên của bạn">
+                </div>
+                 <div class="frmTxt">
+                    <label for = "txtMSSV">Mã số sinh viên:</label>
+                    <input type="text" class="control" id="txtMSSV" name="txttxtMSSV" placeholder="Nhập mã số sinh viên">
+                </div>
+                <div class="frmTxt">
+                    <label for="txtUserName">Tên đăng nhập:</label>
+                    <input type="text" class="control" id="txtUserName" name="txtUserName" placeholder="Tên đăng nhập của bạn">
+                </div>
+                <div class="frmTxt">
+                    <label id="Password" for="txtUserPassword">Mật khẩu:</label>
+                    <input type="password" class="control" id="txtUserPassword" name="txtUserPassword" placeholder="Mật khẩu của bạn">
+                </div>
+                <div class="frmTxt" id="checkbox">
+                    <label for="checkbox1">Điểm mạnh:</label>
+                    <div class="option"><input type="checkbox" id="checkbox1" name="checkbox" value="Back-end" title="Back-end"> Back-end</div>
+                    <div class="option"><input type="checkbox" id="checkbox2" name="checkbox" value="Front-end" title="Front-end"> Front-end</div>
+                    <div class="option"><input type="checkbox" id="checkbox3" name="checkbox" value="Database" title="Database"> Database</div>
+                </div>
+
+                <div>
+                    <label for="">Sở thích:</label>
+                    <input type="text" class="control" id="txtInterested" name="txtInterested" placeholder="Sở thích của bạn là gì?">
+                </div>
+
+                <div class="buttons">
+                    <input class="Button" type="submit" id="sbRegister" value="Đăng ký">
+                </div>
+                
+            </form>
+        </div>
+	</body>	
+</html>
