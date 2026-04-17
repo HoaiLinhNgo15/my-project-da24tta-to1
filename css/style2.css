@@ -37,6 +37,7 @@ label#Password{
 	align-items: center;
 	background-color:azure;
 	padding: 20px;
+	box-shadow: 17px 9px 15px 0px rgba(0, 0, 0, 0.20);
 	border-radius: 20px;
 	height: 300px;
 }
