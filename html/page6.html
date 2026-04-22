@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<title>Thiết kế trang tính học phí</title>		
+		<meta charset = "utf-8">
+        <link href="#" rel="StyleSheet">
+	</head>
+	
+	<body>
+        <div id="container">
+            <input type="button" value="Thêm" onclick="Add()">
+        </div>
+		
+        <script>
+           function Add() {
+            const myRow = document.createElement("div");
+            myRow.setAttribute("class", "Row");
+            const myText = document.createTextNode("kkkkkkkkk");
+            myRow.appendChild(myText);
+            const subject = document.createElement("input");
+            subject.setAttribute("type","text");
+
+            document.getElementById("container").appendChild(myRow);
+           }
+        </script>
+	</body>	
+</html>

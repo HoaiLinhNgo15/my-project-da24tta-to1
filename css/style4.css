@@ -1,0 +1,24 @@
+﻿table, th, td, tr {
+	border: 2px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+div .hoaDon{
+	width: 360px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1{
+	width: 360px;
+	text-align: center;
+}
+
+div .Table_HoaDon{
+	width: 360px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
