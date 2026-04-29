@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<title>Thiết kế trang giới thiệu sản phẩm</title>		
+		<meta charset = "utf-8">
+        <link href="#" rel="StyleSheet">
+	</head>
+	
+	<body>
+        <div id="product_list">
+            <button onclick="addProduct('../assets/images/Civic.jpg',
+            'Honda Civic type R, xuất xứ Nhật Bản','Giá niêm yết 2.399.000.000 VNĐ','#!')">Thêm</button>
+            <form id="frm_product">
+                <input type="text" id="srcProduct" name="srcProduct" placeholder="Nhập nguồn ảnh sản phẩm">
+                <input type="text" id="nameProduct" name="nameProduct" placeholder="Nhập tên sản phẩm">
+                <input type="text" id="priceProduct" name="priceProduct" placeholder="Nhập giá sản phẩm">
+                <input type="text" id="linkProduct" name="linkProduct" placeholder="Nhập link của sản phẩm">
+                <input type="button" id="buttonAdd" name="buttonAdd" value="Thêm mới" onclick="addProduct1()">
+            </form>
+            <input type="button" id="buttonAddAll" name="buttonAddAll" value="Thêm mới nè" onclick="loadAllProduct()">
+        </div>
+        <script src="../js/lib.js">
+
+        </script>
+	</body>	
+</html>
