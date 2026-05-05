@@ -11,6 +11,53 @@ function loadAllProduct(){
     }
 }
 
+function newProduct() {
+    const myFrm = document.createElement("form");
+    myFrm.setAttribute("id", "frm_product");
+    
+    const input1 = document.createElement("input");
+    input1.setAttribute("type", "text");
+    input1.setAttribute("id", "srcProduct");
+    input1.setAttribute("name", "srcProduct");
+    input1.setAttribute("class", "input-field");
+    input1.setAttribute("placeholder", "Nhập nguồn ảnh sản phẩm");
+    
+
+    const input2 = document.createElement("input");
+    input2.setAttribute("type", "text");
+    input2.setAttribute("id", "nameProduct");
+    input2.setAttribute("name", "nameProduct");
+    input2.setAttribute("class", "input-field");
+    input2.setAttribute("placeholder", "Nhập tên sản phẩm");
+
+    const input3 = document.createElement("input");
+    input3.setAttribute("type", "text");
+    input3.setAttribute("id", "priceProduct");
+    input3.setAttribute("name", "priceProduct");
+    input3.setAttribute("class", "input-field");
+    input3.setAttribute("placeholder", "Nhập giá sản phẩm");
+
+    const input4 = document.createElement("input");
+    input4.setAttribute("type", "text");
+    input4.setAttribute("id", "linkProduct");
+    input4.setAttribute("name", "linkProduct");
+    input4.setAttribute("class", "input-field");
+    input4.setAttribute("placeholder", "Nhập liên kết sản phẩm");
+
+    const button = document.createElement("input");
+    button.setAttribute("type", "button");
+    button.setAttribute("id", "buttonAdd");
+    button.setAttribute("value", "Thêm mới");
+    button.setAttribute("onclick", "addProduct1()");
+
+    myFrm.appendChild(input1);
+    myFrm.appendChild(input2);
+    myFrm.appendChild(input3);
+    myFrm.appendChild(input4);
+    myFrm.appendChild(button);
+
+    document.getElementById("product_control").appendChild(myFrm);
+}
 function addProduct(imgLink, tenSp, giaSp, linkSp){
     const myDiv = document.createElement("div"); //tao Node div
             myDiv.setAttribute("class", "product-item") //tao thuoc tinh class cho Node div

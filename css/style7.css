@@ -1,0 +1,42 @@
+﻿.container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#frm_product{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #d8d8d8;
+	border-radius: 10px;
+}
+#product_control{
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+}
+.input-field{
+	margin-bottom: 10px;
+}
+#buttonAdd{
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+.product-item{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	width: 300px;
+}

@@ -3,7 +3,7 @@
 	<head>
 		<title>Thiết kế trang tính học phí</title>		
 		<meta charset = "utf-8">
-        <link href="#" rel="StyleSheet">
+        <link href="../css/style6.css" rel="StyleSheet">
 	</head>
 	
 	<body>
@@ -13,48 +13,121 @@
 		
         <script>
            function Add() {
-            const myRow = document.createElement("div");
-            myRow.setAttribute("class", "Row");
+                //Tạo ra một thẻ div chứa form
+                const myRow = document.createElement("div");
+                myRow.setAttribute("class", "Row"); //thêm thuộc tính cho thẻ div đã tạo
 
-            const mySubject = document.createElement("input");
-            const myTinchi = document.createElement("input");
-            const mySelect = document.createElement("select");
+                //Tạo ra một thẻ form
+                const myFrm = document.createElement("form");
+                myFrm.setAttribute("id", "myfrm"); //thêm thuộc tính class cho thẻ form
 
-            mySubject.setAttribute("type","text");
-            mySubject.setAttribute("name", "sb");
-            mySubject.setAttribute("id", "sb");
-            mySubject.setAttribute("placeholder", "Nhập tên môn");
-            
-            myTinchi.setAttribute("type", "number");
-            myTinchi.setAttribute("name", "tinchi");
-            myTinchi.setAttribute("id", "tinchi"); 
-            myTinchi.setAttribute("min", "1");
-            myTinchi.setAttribute("placeholder", "Nhập số tín chỉ");
+                //tạo các thẻ input và select để lấy dữ liệu và thẻ chứa trong form
+                const mySubject = document.createElement("input"); 
+                const myTinchi = document.createElement("input");
+                const mySelect = document.createElement("select");
 
-            mySelect.setAttribute("class","select1");
-            const option1 = document.createElement("option");
-            const option2 = document.createElement("option");
+                //thiết lập các thuộc tính cho thẻ input thứ 1
+                mySubject.setAttribute("type","text");
+                mySubject.setAttribute("name", "sb");
+                mySubject.setAttribute("id", "sb");
+                mySubject.setAttribute("placeholder", "Nhập tên môn");
+                mySubject.setAttribute("class", "select");
+                
+                //Thiết lập các thuộc tính cho thẻ input thứ 2
+                myTinchi.setAttribute("type", "number");
+                myTinchi.setAttribute("name", "tinchi");
+                myTinchi.setAttribute("id", "tinchi"); 
+                myTinchi.setAttribute("min", "1");
+                myTinchi.setAttribute("placeholder", "Nhập số tín chỉ");
+                myTinchi.setAttribute("class", "select");
 
-            option1.setAttribute("value","Cơ sở ngành");
-            const textOption1 = document.createTextNode("Cơ sở ngành");
-            option1.appendChild(textOption1);
+                //Thiết lập các thuộc tính cho thẻ select
+                mySelect.setAttribute("class","select");
+                //Tạo các option trong thẻ select
+                const option1 = document.createElement("option");
+                const option2 = document.createElement("option");
 
-            option2.setAttribute("value","Chuyên ngành");
-            option2.setAttribute("selected", null);
-            const textOption2 = document.createTextNode("Chuyên ngành");
-            option2.appendChild(textOption2);
+                //thiết lập nội dung trong thẻ option thứ 1
+                option1.setAttribute("value","Cơ sở ngành");
+                const textOption1 = document.createTextNode("Cơ sở ngành");
+                option1.appendChild(textOption1);
 
-            mySelect.appendChild(option1);
-            mySelect.appendChild(option2);
+                //thiết lập nội dung trong thẻ option thứ 2
+                option2.setAttribute("value","Chuyên ngành");
+                option2.setAttribute("selected", null);
+                const textOption2 = document.createTextNode("Chuyên ngành");
+                option2.appendChild(textOption2);
 
-            myRow.appendChild(mySubject);
-            myRow.appendChild(myTinchi);
-            myRow.appendChild(mySelect);
-            
-            document.getElementsByClassName("container")[0].appendChild(myRow);
-            //dùng document.querySelector(".container").appendChild(myRow);
-            //hoặc dùng document.querySelectorAll(".container")[0].appendChild(myRow);
+                mySelect.appendChild(option1); //đưa option 1 vào thẻ select
+                mySelect.appendChild(option2); //đưa option 2 vào thẻ select
+
+                myFrm.appendChild(mySubject); //đưa thẻ input thứ 1 vào thẻ form
+                myFrm.appendChild(myTinchi); //đưa thẻ input thứ 2 vào thẻ form
+                myFrm.appendChild(mySelect); //đưa thẻ select vào thẻ form
+
+                //Tạo thẻ div chứa kết quả
+                const myResult = document.createElement("div");
+                myResult.setAttribute("class", "result");
+                myFrm.appendChild(myResult);
+                
+                //Tạo một thẻ div chứa nút
+                const myButtonDiv = document.createElement("div");
+                myButtonDiv.setAttribute("class", "buttonDiv");
+
+                //Tạo một nút điều khiển xem học phí
+                const myTuition = document.createElement("input");
+                myTuition.setAttribute("type", "button");
+                myTuition.setAttribute("id", "btn1");
+                myTuition.setAttribute("value", "Xem học phí");
+                myTuition.setAttribute("onclick", "Calculation()");
+                
+                //Tạo nút nhập lại để xóa kết quả đã tính
+                const myReset = document.createElement("input");
+                myReset.setAttribute("type", "reset");
+                myReset.setAttribute("value", "Nhập lại");
+                myReset.setAttribute("id", "btn2");
+
+                myButtonDiv.appendChild(myTuition);
+                myButtonDiv.appendChild(myReset);
+
+                myFrm.appendChild(myButtonDiv);
+
+                //đưa thẻ form vào thẻ div có class là Row
+                myRow.appendChild(myFrm);
+
+                document.getElementsByClassName("container")[0].appendChild(myRow);
+                //dùng document.querySelector(".container").appendChild(myRow);
+                //hoặc dùng document.querySelectorAll(".container")[0].appendChild(myRow);
            }
+            function Calculation(){
+                const ketqua = document.getElementsByClassName("kq");
+                if(ketqua.length > 0) {
+                    ketqua[0].remove();
+                }
+                
+                const myFormula = document.forms["myfrm"];
+                let soTC = parseInt(myFormula.elements[1].value);
+                let typeSb;
+                if(myFormula.elements[2].value == "Cơ sở ngành") {
+                    typeSb = 595000;
+                } else {
+                    typeSb = 640000;
+                }
+                const myResult = document.createElement("p");
+                myResult.setAttribute("class", "kq");
+                let x="";
+                if(isNaN(soTC) || soTC <= 0) {
+                    x+="Vui lòng nhập số tín chỉ hợp lệ!";
+                }
+                else {
+                    let hocphi = 0;
+                    hocphi = soTC * typeSb;
+                    x+="Học phí: " + hocphi + " VND";
+                }
+                const textResult=document.createTextNode(x);
+                myResult.appendChild(textResult);
+                document.getElementsByClassName("result")[0].appendChild(myResult);
+            }
         </script>
-	</body>	
+	</body>
 </html>
