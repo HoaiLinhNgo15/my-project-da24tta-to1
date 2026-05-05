@@ -122,7 +122,8 @@
                 else {
                     let hocphi = 0;
                     hocphi = soTC * typeSb;
-                    x+="Học phí: " + hocphi + " VND";
+                    let formatted = hocphi.toLocaleString("vi-VN");
+                    x+="Học phí: " + formatted + " VND";
                 }
                 const textResult=document.createTextNode(x);
                 myResult.appendChild(textResult);
