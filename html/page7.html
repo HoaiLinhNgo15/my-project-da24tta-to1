@@ -4,19 +4,20 @@
 		<title>Thiết kế trang giới thiệu sản phẩm</title>		
 		<meta charset = "utf-8">
         <link href="../css/style7.css" rel="StyleSheet">
+        <script src="../js/lib.js"></script>
 	</head>
 	
 	<body>
         <div class="container">
             <div id="product_control">
-                <input type="button" onclick="loadAllProduct()" value="Thêm tất cả sản phẩm">
-                <input type="button" onclick="newProduct()" value="Nhập mới một sản phẩm">
+                
             </div>
             <div id="product_list">
                 
             </div>
         </div>
-
-        <script src="../js/lib.js"></script>
+        <script>
+            loadAllProduct(productList);
+        </script>
 	</body>	
 </html>

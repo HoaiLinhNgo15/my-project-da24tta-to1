@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<title>Thiết kế trang giới thiệu sản phẩm</title>		
+		<meta charset = "utf-8">
+        <link href="../css/styleDetail.css" rel="StyleSheet">
+        <script src="../js/lib.js"></script>
+	</head>
+	
+	<body>
+        <div class="col">
+            <div class="nav-row">
+                <nav>
+                    <a href="page7.html">Sản phẩm</a>
+                    <a href="#">Chi tiết sản phẩm</a>
+                </nav>
+            </div>
+            <div class="container">
+                <div class="Image">
+                    <img id="p-image" src="" alt="">
+                </div>
+                <div class="Info">
+                    <h3 id="p-name">Tên sản phẩm</h3>
+                    <p id="p-price">Giá sản phẩm</p>
+                    <p style="font-weight: bolder;">Mô tả chi tiết</p>
+                    <p id="p-desc">Mô tả sản phẩm</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const idCanTim = params.get('id');
+            const spTimThay = productList.find(p => p.id === idCanTim);
+            if (spTimThay) {
+                document.getElementById("p-image").src = spTimThay.img;
+                document.getElementById("p-name").innerText = spTimThay.name;
+                document.getElementById("p-price").innerText = "Giá lăn bánh: " + spTimThay.price +" VND";
+                document.getElementById("p-desc").innerText = spTimThay.desc;
+            }
+        </script>
+	</body>	
+</html>
